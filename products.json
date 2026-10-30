@@ -28,5 +28,11 @@
     "name": "Speaker JBL Party box",
     "price": 204,
     "stock": 4
+  },
+  {
+    "id": 6,
+    "name": "USB cable type C",
+    "price": 50,
+    "stock": 30
   }
 ]
