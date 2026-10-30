@@ -1,6 +1,6 @@
 # Products API
 
-REST API built with Node.js and Express to manage a product catalog (CRUD). Data is stored in a local JSON file.
+REST API built with Node.js, Express and TypeScript to manage a product catalog (CRUD). Data is stored in a local JSON file.
 
 This is a personal learning project, built incrementally: basic CRUD first, then validation middleware, authentication and a React front end.
 
@@ -8,8 +8,9 @@ This is a personal learning project, built incrementally: basic CRUD first, then
 
 - Node.js
 - Express
+- TypeScript
 - File system storage (`products.json`)
-- Nodemon (development)
+- tsx (development, auto-restart)
 
 ## Getting started
 
@@ -21,19 +22,37 @@ This is a personal learning project, built incrementally: basic CRUD first, then
 ### Installation
 
 ```bash
-git clone https://github.com/yorshreynoso/products-api-express.git
-cd  products-api-express
+git clone <repository-url>
+cd <project-folder>
 npm install
 ```
 
 ### Running the project
 
+**Development** (runs the TypeScript source directly and restarts on file changes):
+
 ```bash
-npm run start   # run the server
-npm run dev     # run with nodemon (restarts on file changes)
+npm run dev
+```
+
+**Production** (compiles to JavaScript in `dist/` and runs it):
+
+```bash
+npm run build
+npm run start
 ```
 
 The server runs at `http://localhost:3000`.
+
+### Project structure
+
+```
+src/
+└── app.ts          # Express server and routes
+dist/               # Compiled JavaScript (generated, not in Git)
+products.json       # Data file (generated, not in Git)
+tsconfig.json       # TypeScript configuration
+```
 
 ## Endpoints
 
@@ -89,6 +108,7 @@ Content-Type: application/json
 |--------|---------------------------------------------------|
 | 400    | Invalid id or missing required fields             |
 | 404    | Product or route not found                        |
+| 500    | Unexpected error reading or writing data          |
 
 ```json
 { "error": "id must be a positive integer" }
@@ -97,6 +117,9 @@ Content-Type: application/json
 ## Roadmap
 
 - [x] Basic CRUD
+- [x] Migrate to TypeScript
+- [ ] Split into layers (routes, controllers, services)
+- [ ] Database
 - [ ] Validation middleware
 - [ ] Authentication middleware
 - [ ] React front end
