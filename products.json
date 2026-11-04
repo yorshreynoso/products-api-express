@@ -34,5 +34,23 @@
     "name": "USB cable type C",
     "price": 50,
     "stock": 30
+  },
+  {
+    "id": 8,
+    "name": "Speaker with Bass and twitter",
+    "price": 204,
+    "stock": 4
+  },
+  {
+    "id": 9,
+    "name": "mirabox",
+    "price": 2500,
+    "stock": 10
+  },
+  {
+    "id": 10,
+    "name": "selfstick",
+    "price": 100,
+    "stock": 20
   }
 ]
